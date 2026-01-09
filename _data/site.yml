@@ -3,42 +3,38 @@
 # ============================================
 
 # Business Details
-business_name: "{BUSINESS_NAME}"
-driver_name: "{DRIVER_NAME}"
+business_name: "Singh's Taxi M0541"
+driver_name: "Preetipal Singh"
+driver_short: "Singh"
+taxi_number: "M0541"
 vehicle_type: "{VEHICLE_TYPE}"
 abn: "{ABN}"
 
 # Contact Information
-phone_e164: "{PHONE_E164}"           # E.164 format, e.g., +61412345678
-phone_display: "{PHONE_DISPLAY}"      # Display format, e.g., 0412 345 678
-whatsapp_number: "{WHATSAPP_NUMBER}"  # Without + symbol, e.g., 61412345678
+phone_e164: "{PHONE_E164}"
+phone_display: "{PHONE_DISPLAY}"
+whatsapp_number: "{WHATSAPP_NUMBER}"
 email_contact: "{EMAIL_CONTACT}"
 
 # Location
-city_region: "{CITY_REGION}"          # e.g., "Melbourne, Victoria"
-service_areas: "{SERVICE_AREAS}"      # e.g., "Melbourne CBD, Inner Suburbs, Airport"
+city_region: "Kyneton & Surrounds"
+service_areas: "Kyneton, Heathcote, Mia Mia, Redesdale"
 
 # URLs
-base_url: "https://{GITHUB_USERNAME}.github.io/{REPO_NAME}"
-google_form_embed_url: "{GOOGLE_FORM_EMBED_URL}"
+base_url: ""
 
-# Map coordinates (OpenStreetMap)
-map_lat: "{MAP_LAT}"                  # e.g., -37.8136
-map_lon: "{MAP_LON}"                  # e.g., 144.9631
-map_zoom: "12"
+# Map coordinates (Kyneton area)
+map_lat: "-37.2467"
+map_lon: "144.4542"
 
 # Design
-accent_hex: "{ACCENT_HEX}"            # e.g., #D4A017 (warm gold)
+accent_hex: "#d4a017"
 
-# Analytics (optional - leave empty to disable)
-ga4_id: ""                            # e.g., G-XXXXXXXXXX
+# Analytics (optional)
+ga4_id: ""
 
-# Business Hours
+# Hours
 hours:
-  weekdays: "6:00 AM – 10:00 PM"
-  weekends: "7:00 AM – 11:00 PM"
-  note: "24/7 by appointment for airport transfers"
-
-# Social (optional)
-facebook_url: ""
-instagram_url: ""
+  weekdays: "By Appointment"
+  weekends: "By Appointment"
+  note: "Call or WhatsApp to book"

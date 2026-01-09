@@ -131,6 +131,23 @@ button {
   width: auto;
 }
 
+.header__logo-text {
+  font-weight: 700;
+  font-size: var(--font-size-lg);
+  color: var(--color-primary);
+}
+
+.header__logo-badge {
+  display: inline-block;
+  background: var(--color-accent);
+  color: var(--color-primary);
+  font-size: var(--font-size-sm);
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: var(--radius-sm);
+  margin-left: var(--spacing-sm);
+}
+
 /* Navigation */
 .nav__toggle {
   display: flex;
@@ -286,14 +303,25 @@ button {
   color: var(--color-white);
   padding: var(--spacing-3xl) var(--spacing-md);
   text-align: center;
-  min-height: 80vh;
+  min-height: 60vh;
   display: flex;
   align-items: center;
 }
 
 .hero__container {
-  max-width: 800px;
+  max-width: 700px;
   margin: 0 auto;
+}
+
+.hero__badge {
+  display: inline-block;
+  background: var(--color-accent);
+  color: var(--color-primary);
+  font-size: var(--font-size-sm);
+  font-weight: 700;
+  padding: var(--spacing-xs) var(--spacing-md);
+  border-radius: var(--radius-md);
+  margin-bottom: var(--spacing-md);
 }
 
 .hero__title {
@@ -373,6 +401,11 @@ button {
   gap: var(--spacing-lg);
 }
 
+.services-grid--compact {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
 .service-card {
   background: var(--color-white);
   border-radius: var(--radius-lg);
@@ -410,6 +443,72 @@ button {
 
 .service-card__text {
   color: var(--color-gray-600);
+}
+
+/* ========================================
+   Areas List
+   ======================================== */
+.areas-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-xl);
+}
+
+.areas-list__item {
+  background: var(--color-white);
+  padding: var(--spacing-sm) var(--spacing-lg);
+  border-radius: var(--radius-md);
+  font-weight: 500;
+  box-shadow: var(--shadow-sm);
+}
+
+/* ========================================
+   About Section
+   ======================================== */
+.section__container--narrow {
+  max-width: 800px;
+}
+
+.about-content {
+  display: grid;
+  gap: var(--spacing-xl);
+  align-items: center;
+}
+
+.about-image img {
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  width: 100%;
+  height: auto;
+  background: var(--color-gray-200);
+  min-height: 200px;
+}
+
+.about-text p {
+  margin-bottom: var(--spacing-md);
+  color: var(--color-gray-800);
+}
+
+.about-text p:last-child {
+  margin-bottom: 0;
+}
+
+/* ========================================
+   CTA Section
+   ======================================== */
+.section--cta {
+  background: linear-gradient(135deg, var(--color-primary) 0%, #16213e 100%);
+  color: var(--color-white);
+}
+
+.section__title--light {
+  color: var(--color-white);
+}
+
+.section__subtitle--light {
+  color: rgba(255,255,255,0.9);
 }
 
 /* ========================================
@@ -560,7 +659,7 @@ button {
 .footer {
   background: var(--color-primary);
   color: var(--color-white);
-  padding: var(--spacing-3xl) var(--spacing-md) var(--spacing-xl);
+  padding: var(--spacing-xl) var(--spacing-md);
 }
 
 .footer__container {
@@ -568,79 +667,43 @@ button {
   margin: 0 auto;
 }
 
-.footer__grid {
-  display: grid;
-  gap: var(--spacing-2xl);
+.footer__simple {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+  align-items: center;
+  text-align: center;
 }
 
 .footer__heading {
-  font-size: var(--font-size-lg);
-  margin-bottom: var(--spacing-md);
-  color: var(--color-accent);
+  font-size: var(--font-size-xl);
+  margin-bottom: var(--spacing-sm);
+  color: var(--color-white);
+}
+
+.footer__badge {
+  display: inline-block;
+  background: var(--color-accent);
+  color: var(--color-primary);
+  font-size: var(--font-size-sm);
+  padding: 2px 8px;
+  border-radius: var(--radius-sm);
+  margin-left: var(--spacing-sm);
 }
 
 .footer__text {
   opacity: 0.9;
-  margin-bottom: var(--spacing-md);
 }
 
-.footer__abn {
-  font-size: var(--font-size-sm);
-  opacity: 0.7;
-}
-
-.footer__links a {
-  display: block;
-  padding: var(--spacing-xs) 0;
-  opacity: 0.9;
-  transition: opacity var(--transition);
-}
-
-.footer__links a:hover {
-  opacity: 1;
-  color: var(--color-accent);
-}
-
-.footer__hours dt {
-  font-weight: 600;
-  margin-top: var(--spacing-sm);
-}
-
-.footer__hours dd {
-  opacity: 0.9;
-}
-
-.footer__hours-note {
-  font-size: var(--font-size-sm);
-  opacity: 0.7;
-  margin-top: var(--spacing-sm);
-}
-
-.footer__contact li {
-  margin-bottom: var(--spacing-sm);
-}
-
-.footer__contact-link {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--spacing-sm);
-  opacity: 0.9;
-  transition: opacity var(--transition);
-}
-
-.footer__contact-link:hover {
-  opacity: 1;
-  color: var(--color-accent);
-}
-
-.footer__area {
-  margin-top: var(--spacing-md);
-  font-size: var(--font-size-sm);
-  opacity: 0.9;
+.footer__contact-simple {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-md);
+  justify-content: center;
 }
 
 .footer__bottom {
-  margin-top: var(--spacing-2xl);
+  margin-top: var(--spacing-lg);
   padding-top: var(--spacing-lg);
   border-top: 1px solid rgba(255,255,255,0.1);
   text-align: center;
@@ -651,10 +714,18 @@ button {
   opacity: 0.7;
 }
 
-.footer__credit {
+.footer__links-small {
+  margin-top: var(--spacing-sm);
+}
+
+.footer__links-small a {
   font-size: var(--font-size-sm);
-  opacity: 0.5;
-  margin-top: var(--spacing-xs);
+  opacity: 0.6;
+  text-decoration: underline;
+}
+
+.footer__links-small a:hover {
+  opacity: 1;
 }
 
 /* ========================================
@@ -742,8 +813,18 @@ button {
     grid-template-columns: repeat(2, 1fr);
   }
   
-  .testimonial-card {
-    flex: 0 0 calc(50% - var(--spacing-md));
+  .services-grid--compact {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .about-content {
+    grid-template-columns: 1fr 1.5fr;
+  }
+  
+  .footer__simple {
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: left;
   }
 }
 
@@ -776,23 +857,11 @@ button {
   .nav__link {
     padding: var(--spacing-sm) var(--spacing-md);
   }
-  
-  .footer__grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
 }
 
 @media (min-width: 1024px) {
   .services-grid {
     grid-template-columns: repeat(3, 1fr);
-  }
-  
-  .testimonial-card {
-    flex: 0 0 calc(33.333% - var(--spacing-md));
-  }
-  
-  .footer__grid {
-    grid-template-columns: repeat(4, 1fr);
   }
 }
 
