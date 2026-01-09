@@ -1,20 +1,20 @@
 # ============================================
-# SITE CONFIGURATION - Replace all placeholders
+# SITE CONFIGURATION - Singh's Taxi
 # ============================================
 
 # Business Details
-business_name: "Singh's Taxi M0541"
+business_name: "Singh's Taxi"
 driver_name: "Preetipal Singh"
 driver_short: "Singh"
 taxi_number: "M0541"
-vehicle_type: "{VEHICLE_TYPE}"
-abn: "{ABN}"
+vehicle_type: "Sedan"
+abn: ""
 
 # Contact Information
-phone_e164: "{PHONE_E164}"
-phone_display: "{PHONE_DISPLAY}"
-whatsapp_number: "{WHATSAPP_NUMBER}"
-email_contact: "{EMAIL_CONTACT}"
+phone_e164: "+61452628986"
+phone_display: "0452 628 986"
+whatsapp_number: "61452628986"
+email_contact: ""
 
 # Location
 city_region: "Kyneton & Surrounds"
@@ -28,7 +28,7 @@ map_lat: "-37.2467"
 map_lon: "144.4542"
 
 # Design
-accent_hex: "#d4a017"
+accent_hex: "#FFC107"
 
 # Analytics (optional)
 ga4_id: ""
@@ -38,3 +38,9 @@ hours:
   weekdays: "By Appointment"
   weekends: "By Appointment"
   note: "Call or WhatsApp to book"
+
+# Google Business Profile - For reviews and SEO
+# Create a Google Business Profile at: https://business.google.com
+# Once created, get your review link and place ID
+google_place_id: ""
+google_review_url: ""

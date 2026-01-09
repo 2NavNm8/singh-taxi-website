@@ -4,50 +4,162 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>{{ title }} | {{ site.business_name }}</title>
-  <meta name="description" content="{{ description | default(site.business_name ~ ' - Local taxi service in ' ~ site.city_region) }}">
+  <!-- Primary Meta Tags -->
+  <title>{{ title }} | {{ site.business_name }} - Taxi {{ site.taxi_number }}</title>
+  <meta name="title" content="{{ title }} | {{ site.business_name }} - Taxi {{ site.taxi_number }}">
+  <meta name="description" content="{{ description | default(site.business_name ~ ' (Taxi ' ~ site.taxi_number ~ ') - Reliable local taxi service in ' ~ site.service_areas ~ '. Call ' ~ site.phone_display ~ ' for bookings.') }}">
+  <meta name="keywords" content="taxi {{ site.city_region | lower }}, kyneton taxi, heathcote taxi, mia mia taxi, redesdale taxi, local taxi service, airport transfers, taxi booking, {{ site.driver_short | lower }} taxi, taxi {{ site.taxi_number | lower }}">
+  <meta name="author" content="{{ site.driver_name }}">
+  <meta name="robots" content="index, follow">
+  <meta name="language" content="English">
+  <meta name="geo.region" content="AU-VIC">
+  <meta name="geo.placename" content="Kyneton">
+  <meta name="geo.position" content="{{ site.map_lat }};{{ site.map_lon }}">
+  <meta name="ICBM" content="{{ site.map_lat }}, {{ site.map_lon }}">
   
-  <!-- Open Graph -->
-  <meta property="og:title" content="{{ title }} | {{ site.business_name }}">
-  <meta property="og:description" content="{{ description | default(site.business_name ~ ' - Local taxi service in ' ~ site.city_region) }}">
-  <meta property="og:image" content="{{ site.base_url }}/assets/images/{{ seo_image | default('og-image.webp') }}">
-  <meta property="og:url" content="{{ site.base_url }}{{ page.url }}">
+  <!-- Canonical URL -->
+  <link rel="canonical" href="{{ site.base_url }}{{ page.url }}">
+  
+  <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
+  <meta property="og:url" content="{{ site.base_url }}{{ page.url }}">
+  <meta property="og:title" content="{{ title }} | {{ site.business_name }}">
+  <meta property="og:description" content="{{ description | default(site.business_name ~ ' - Reliable local taxi service in ' ~ site.service_areas ~ '. Book now!') }}">
+  <meta property="og:image" content="{{ site.base_url }}/assets/images/{{ seo_image | default('og-image.webp') }}">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
   <meta property="og:locale" content="en_AU">
+  <meta property="og:site_name" content="{{ site.business_name }}">
+  
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="{{ site.base_url }}{{ page.url }}">
+  <meta property="twitter:title" content="{{ title }} | {{ site.business_name }}">
+  <meta property="twitter:description" content="{{ description | default(site.business_name ~ ' - Reliable local taxi service in ' ~ site.service_areas) }}">
+  <meta property="twitter:image" content="{{ site.base_url }}/assets/images/{{ seo_image | default('og-image.webp') }}">
+  
+  <!-- Mobile App Tags -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="{{ site.business_name }}">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="theme-color" content="#FFC107">
+  <meta name="msapplication-TileColor" content="#1a1a1a">
   
   <!-- Favicon -->
   <link rel="icon" href="/assets/images/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/assets/images/apple-touch-icon.png">
   
-  <!-- Font -->
+  <!-- Font - Optimized Loading -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
   
   <!-- Styles -->
   <link rel="stylesheet" href="/assets/css/styles.css">
   
-  <!-- JSON-LD Structured Data -->
+  <!-- JSON-LD Structured Data - TaxiService -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "TaxiService",
     "name": "{{ site.business_name }}",
-    "description": "Local taxi service in {{ site.service_areas }}",
+    "alternateName": "{{ site.driver_short }}'s Taxi",
+    "description": "Reliable local taxi service in {{ site.service_areas }}. Professional, friendly service for local trips, airport transfers, and pre-booked rides.",
     "url": "{{ site.base_url }}",
     "telephone": "{{ site.phone_e164 }}",
-    "areaServed": ["Kyneton", "Heathcote", "Mia Mia", "Redesdale"],
+    "image": "{{ site.base_url }}/assets/images/og-image.webp",
+    "priceRange": "$$",
+    "areaServed": [
+      {
+        "@type": "City",
+        "name": "Kyneton",
+        "containedInPlace": {
+          "@type": "State",
+          "name": "Victoria"
+        }
+      },
+      {
+        "@type": "City",
+        "name": "Heathcote"
+      },
+      {
+        "@type": "City",
+        "name": "Mia Mia"
+      },
+      {
+        "@type": "City",
+        "name": "Redesdale"
+      }
+    ],
     "provider": {
       "@type": "Person",
-      "name": "{{ site.driver_name }}"
+      "name": "{{ site.driver_name }}",
+      "jobTitle": "Taxi Driver"
     },
     "address": {
       "@type": "PostalAddress",
       "addressLocality": "Kyneton",
-      "addressRegion": "Victoria",
+      "addressRegion": "VIC",
+      "postalCode": "3444",
       "addressCountry": "AU"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": "{{ site.map_lat }}",
+      "longitude": "{{ site.map_lon }}"
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "{{ site.phone_e164 }}",
+      "contactType": "reservations",
+      "availableLanguage": ["English"]
+    },
+    "sameAs": []
+  }
+  </script>
+  
+  <!-- JSON-LD - LocalBusiness for broader search -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "{{ site.business_name }}",
+    "image": "{{ site.base_url }}/assets/images/og-image.webp",
+    "@id": "{{ site.base_url }}",
+    "url": "{{ site.base_url }}",
+    "telephone": "{{ site.phone_e164 }}",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Kyneton",
+      "addressRegion": "VIC",
+      "postalCode": "3444",
+      "addressCountry": "AU"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": {{ site.map_lat }},
+      "longitude": {{ site.map_lon }}
+    },
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+      "opens": "00:00",
+      "closes": "23:59"
     }
   }
   </script>
+  
+  {% if site.ga4_id %}
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.ga4_id }}"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', '{{ site.ga4_id }}');
+  </script>
+  {% endif %}
 </head>
 <body>
   <a href="#main-content" class="skip-link">Skip to main content</a>
@@ -59,5 +171,7 @@
   </main>
   
   {% include "footer.njk" %}
+  
+  <script src="/assets/js/main.js" defer></script>
 </body>
 </html>

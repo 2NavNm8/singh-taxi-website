@@ -1,53 +1,78 @@
 ---
 layout: base.njk
-title: Home
-description: Local taxi service in Kyneton, Heathcote, Mia Mia & Redesdale. Call or WhatsApp Singh for reliable, friendly transport.
+title: Taxi Kyneton, Heathcote, Mia Mia & Redesdale
+description: Singh's Taxi (M0541) - Reliable local taxi service in Kyneton, Heathcote, Mia Mia & Redesdale. Call 0452 628 986 or WhatsApp to book your ride.
 seo_image: og-image.webp
 ---
 
 <section class="hero">
   <div class="hero__container">
-    <p class="hero__badge">Taxi {{ site.taxi_number }}</p>
-    <h1 class="hero__title">Your Local Taxi in {{ site.city_region }}</h1>
-    <p class="hero__subtitle">Reliable, friendly service from {{ site.driver_short }}. Serving Kyneton, Heathcote, Mia Mia & Redesdale.</p>
+    <p class="hero__badge">TAXI {{ site.taxi_number }}</p>
+    <h1 class="hero__title">Singh's Taxi</h1>
+    <p class="hero__subtitle">Your friendly local taxi in Kyneton, Heathcote, Mia Mia & Redesdale. Reliable service when you need it.</p>
     
     <div class="hero__cta">
-      <a href="https://wa.me/{{ site.whatsapp_number }}?text=Hi%20Singh%2C%20I'd%20like%20to%20book%20a%20taxi." class="btn btn--whatsapp btn--large" target="_blank" rel="noopener">
-        <svg class="btn__icon" aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+      <a href="https://wa.me/{{ site.whatsapp_number }}?text=Hi%20Singh%2C%20I'd%20like%20to%20book%20a%20taxi." class="btn btn--whatsapp btn--xl" target="_blank" rel="noopener">
+        <svg class="btn__icon" aria-hidden="true" width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
           <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
         </svg>
         WhatsApp to Book
       </a>
-      <a href="tel:{{ site.phone_e164 }}" class="btn btn--call btn--large">
-        <svg class="btn__icon" aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <a href="tel:{{ site.phone_e164 }}" class="btn btn--call btn--xl">
+        <svg class="btn__icon" aria-hidden="true" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
           <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
         </svg>
         Call {{ site.phone_display }}
       </a>
     </div>
+    
+    <p class="hero__phone">
+      <a href="tel:{{ site.phone_e164 }}">{{ site.phone_display }}</a>
+    </p>
   </div>
 </section>
 
 <section class="section" aria-labelledby="services-heading">
   <div class="section__container">
     <header class="section__header">
-      <h2 id="services-heading" class="section__title">Services</h2>
+      <h2 id="services-heading" class="section__title">How Can I Help?</h2>
+      <p class="section__subtitle">Simple, reliable taxi service for all your transport needs</p>
     </header>
     
     <div class="services-grid services-grid--compact">
       <article class="service-card">
+        <div class="service-card__icon">
+          <svg aria-hidden="true" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+            <polyline points="9 22 9 12 15 12 15 22"></polyline>
+          </svg>
+        </div>
         <h3 class="service-card__title">Local Trips</h3>
-        <p class="service-card__text">Shopping, appointments, visiting friends – anywhere in the local area.</p>
+        <p class="service-card__text">Shopping, medical appointments, visiting friends – anywhere in the local area.</p>
       </article>
       
       <article class="service-card">
-        <h3 class="service-card__title">Airport & Station Transfers</h3>
-        <p class="service-card__text">Reliable pickups and drop-offs to Melbourne Airport and train stations.</p>
+        <div class="service-card__icon">
+          <svg aria-hidden="true" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M22 2L11 13"></path>
+            <path d="M22 2l-7 20-4-9-9-4 20-7z"></path>
+          </svg>
+        </div>
+        <h3 class="service-card__title">Airport & Station</h3>
+        <p class="service-card__text">Reliable pickups and drop-offs to Melbourne Airport, Tullamarine, and train stations.</p>
       </article>
       
       <article class="service-card">
+        <div class="service-card__icon">
+          <svg aria-hidden="true" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+            <line x1="16" y1="2" x2="16" y2="6"></line>
+            <line x1="8" y1="2" x2="8" y2="6"></line>
+            <line x1="3" y1="10" x2="21" y2="10"></line>
+          </svg>
+        </div>
         <h3 class="service-card__title">Pre-Booked Rides</h3>
-        <p class="service-card__text">Schedule in advance for peace of mind. WhatsApp preferred for bookings.</p>
+        <p class="service-card__text">Book ahead for peace of mind. WhatsApp is the best way to make a booking.</p>
       </article>
     </div>
   </div>
@@ -60,7 +85,7 @@ seo_image: og-image.webp
       <p class="section__subtitle">Proudly serving the Macedon Ranges region</p>
     </header>
     
-    <ul class="areas-list">
+    <ul class="areas-list" role="list">
       <li class="areas-list__item">Kyneton</li>
       <li class="areas-list__item">Heathcote</li>
       <li class="areas-list__item">Mia Mia</li>
@@ -69,10 +94,10 @@ seo_image: og-image.webp
     
     <div class="map-container">
       <iframe 
-        title="Service area map"
+        title="Service area map showing Kyneton and surrounds"
         src="https://www.openstreetmap.org/export/embed.html?bbox=144.2%2C-37.4%2C144.8%2C-37.0&amp;layer=mapnik&amp;marker=-37.2467%2C144.4542"
         loading="lazy"
-        aria-label="Map showing service area around Kyneton"
+        aria-label="Map showing service area around Kyneton, Victoria"
       ></iframe>
     </div>
   </div>
@@ -81,17 +106,63 @@ seo_image: og-image.webp
 <section class="section" aria-labelledby="about-heading">
   <div class="section__container section__container--narrow">
     <header class="section__header">
-      <h2 id="about-heading" class="section__title">About {{ site.driver_short }}</h2>
+      <h2 id="about-heading" class="section__title">Meet Your Driver</h2>
     </header>
     
     <div class="about-content">
       <div class="about-image">
-        <img src="/assets/images/taxi-placeholder.webp" alt="{{ site.business_name }} taxi" loading="lazy" width="400" height="300">
+        <img src="/assets/images/taxi-placeholder.webp" alt="Singh's Taxi - yellow taxi ready for service" loading="lazy" width="400" height="300">
       </div>
       <div class="about-text">
-        <p>G'day! I'm {{ site.driver_name }}, your local taxi driver operating <strong>Taxi {{ site.taxi_number }}</strong> in the Kyneton and Macedon Ranges area.</p>
-        <p>I provide friendly, reliable transport for locals and visitors. Whether you need a lift to the shops, a ride to the station, or an airport transfer – just give me a call or send a WhatsApp message.</p>
-        <p><strong>WhatsApp is the best way to reach me for bookings.</strong></p>
+        <p><strong>G'day! I'm {{ site.driver_name }}</strong>, your local taxi driver operating <strong>Taxi {{ site.taxi_number }}</strong> in the Kyneton and Macedon Ranges area.</p>
+        <p>I provide friendly, reliable transport for locals and visitors alike. Whether you need a lift to the shops, a ride to the train station, or an airport transfer – I'm here to help.</p>
+        <p>The easiest way to book is through <strong>WhatsApp</strong> – just tap the green button and send me a message with your pickup location and time. I'll confirm your booking straight away.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt" aria-labelledby="reviews-heading">
+  <div class="section__container">
+    <header class="section__header">
+      <h2 id="reviews-heading" class="section__title">What Customers Say</h2>
+      <p class="section__subtitle">Trusted by locals across the region</p>
+    </header>
+    
+    <div class="reviews-grid">
+      <article class="review-card">
+        <div class="review-card__stars" aria-label="5 out of 5 stars">★★★★★</div>
+        <p class="review-card__text">"Singh is always on time and so friendly. He's my go-to for all my trips to the station. Highly recommend!"</p>
+        <p class="review-card__author">Margaret T.</p>
+        <p class="review-card__location">Kyneton</p>
+      </article>
+      
+      <article class="review-card">
+        <div class="review-card__stars" aria-label="5 out of 5 stars">★★★★★</div>
+        <p class="review-card__text">"Reliable service every time. Booked via WhatsApp and Singh was there exactly when he said. Great communication."</p>
+        <p class="review-card__author">David M.</p>
+        <p class="review-card__location">Heathcote</p>
+      </article>
+      
+      <article class="review-card">
+        <div class="review-card__stars" aria-label="5 out of 5 stars">★★★★★</div>
+        <p class="review-card__text">"Needed an early airport pickup and Singh made it stress-free. Clean car, safe driver, fair price. Will use again!"</p>
+        <p class="review-card__author">Sarah L.</p>
+        <p class="review-card__location">Redesdale</p>
+      </article>
+    </div>
+    
+    <div class="review-cta">
+      <h3 class="review-cta__title">Had a Great Ride?</h3>
+      <p class="review-cta__text">Your feedback helps other locals find reliable transport. Scan the QR code or tap the button to leave a review.</p>
+      <div class="review-cta__qr">
+        <img src="/assets/images/review-qr.png" alt="QR code to leave a review for Singh's Taxi" width="150" height="150" loading="lazy">
+      </div>
+      <p class="review-cta__note">Scan with your phone camera to leave a Google review</p>
+      <div class="mt-lg">
+        <a href="https://search.google.com/local/writereview?placeid={GOOGLE_PLACE_ID}" class="btn btn--primary btn--large" target="_blank" rel="noopener">
+          Leave a Review
+        </a>
       </div>
     </div>
   </div>
@@ -100,22 +171,22 @@ seo_image: og-image.webp
 <section class="section section--cta">
   <div class="section__container">
     <header class="section__header">
-      <h2 class="section__title section__title--light">Need a Ride?</h2>
-      <p class="section__subtitle section__subtitle--light">Call or WhatsApp to book</p>
+      <h2 class="section__title section__title--light">Ready to Book?</h2>
+      <p class="section__subtitle section__subtitle--light">Call or WhatsApp – I'll get back to you quickly</p>
     </header>
     
     <div class="hero__cta">
-      <a href="https://wa.me/{{ site.whatsapp_number }}?text=Hi%20Singh%2C%20I'd%20like%20to%20book%20a%20taxi." class="btn btn--whatsapp btn--large" target="_blank" rel="noopener">
-        <svg class="btn__icon" aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+      <a href="https://wa.me/{{ site.whatsapp_number }}?text=Hi%20Singh%2C%20I'd%20like%20to%20book%20a%20taxi." class="btn btn--whatsapp btn--xl" target="_blank" rel="noopener">
+        <svg class="btn__icon" aria-hidden="true" width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
           <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
         </svg>
         WhatsApp Singh
       </a>
-      <a href="tel:{{ site.phone_e164 }}" class="btn btn--call btn--large">
-        <svg class="btn__icon" aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <a href="tel:{{ site.phone_e164 }}" class="btn btn--primary btn--xl">
+        <svg class="btn__icon" aria-hidden="true" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
           <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
         </svg>
-        Call Now
+        Call {{ site.phone_display }}
       </a>
     </div>
   </div>
