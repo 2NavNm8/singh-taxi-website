@@ -1,0 +1,16 @@
+{
+  "name": "singh-taxi-website",
+  "version": "1.0.0",
+  "description": "Static website for {BUSINESS_NAME} taxi service",
+  "scripts": {
+    "start": "eleventy --serve",
+    "build": "eleventy",
+    "clean": "rm -rf _site"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^2.0.1"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

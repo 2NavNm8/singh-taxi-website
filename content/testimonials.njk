@@ -1,0 +1,130 @@
+---
+layout: base.njk
+title: Customer Reviews
+description: See what customers say about {BUSINESS_NAME}. 5-star rated taxi service in {CITY_REGION}.
+seo_image: og-image.webp
+---
+
+<div class="page-header">
+  <h1 class="page-header__title">Customer Reviews</h1>
+  <p class="page-header__subtitle">What our customers say about us</p>
+</div>
+
+<section class="section">
+  <div class="section__container">
+    
+    <div class="testimonials-carousel" aria-label="Customer testimonials">
+      <div class="testimonials-track" role="list">
+        
+        <article class="testimonial-card" role="listitem">
+          <div class="testimonial-card__stars" aria-label="5 out of 5 stars">
+            ★★★★★
+          </div>
+          <blockquote class="testimonial-card__text">
+            "Excellent service! {{ site.driver_name }} was punctual, friendly, and the car was spotless. Will definitely use again for my next airport trip."
+          </blockquote>
+          <cite class="testimonial-card__author">— Sarah M., {{ site.city_region }}</cite>
+        </article>
+        
+        <article class="testimonial-card" role="listitem">
+          <div class="testimonial-card__stars" aria-label="5 out of 5 stars">
+            ★★★★★
+          </div>
+          <blockquote class="testimonial-card__text">
+            "I've been using {{ site.business_name }} for my weekly medical appointments. Always reliable and the driver is so helpful. Highly recommend!"
+          </blockquote>
+          <cite class="testimonial-card__author">— Robert K., {{ site.city_region }}</cite>
+        </article>
+        
+        <article class="testimonial-card" role="listitem">
+          <div class="testimonial-card__stars" aria-label="5 out of 5 stars">
+            ★★★★★
+          </div>
+          <blockquote class="testimonial-card__text">
+            "Needed an early 4am pickup for a flight. {{ site.driver_name }} was there 5 minutes early. Great communication via WhatsApp too."
+          </blockquote>
+          <cite class="testimonial-card__author">— Michelle T., {{ site.city_region }}</cite>
+        </article>
+        
+        <article class="testimonial-card" role="listitem">
+          <div class="testimonial-card__stars" aria-label="5 out of 5 stars">
+            ★★★★★
+          </div>
+          <blockquote class="testimonial-card__text">
+            "Fair prices, clean car, and a genuinely nice driver. What more could you ask for? My go-to taxi service now."
+          </blockquote>
+          <cite class="testimonial-card__author">— James L., {{ site.city_region }}</cite>
+        </article>
+        
+        <article class="testimonial-card" role="listitem">
+          <div class="testimonial-card__stars" aria-label="5 out of 5 stars">
+            ★★★★★
+          </div>
+          <blockquote class="testimonial-card__text">
+            "Used {{ site.business_name }} for our wedding day transport. Everything went perfectly. Professional service from start to finish."
+          </blockquote>
+          <cite class="testimonial-card__author">— Emma & David, {{ site.city_region }}</cite>
+        </article>
+        
+        <article class="testimonial-card" role="listitem">
+          <div class="testimonial-card__stars" aria-label="5 out of 5 stars">
+            ★★★★★
+          </div>
+          <blockquote class="testimonial-card__text">
+            "As a business traveller, I need reliability. {{ site.business_name }} has never let me down. Receipts provided every time too."
+          </blockquote>
+          <cite class="testimonial-card__author">— Andrew P., {{ site.city_region }}</cite>
+        </article>
+        
+      </div>
+      
+      <nav class="testimonials-nav" aria-label="Testimonial navigation">
+        <button class="testimonials-nav__dot is-active" aria-label="Testimonial 1" data-index="0"></button>
+        <button class="testimonials-nav__dot" aria-label="Testimonial 2" data-index="1"></button>
+        <button class="testimonials-nav__dot" aria-label="Testimonial 3" data-index="2"></button>
+        <button class="testimonials-nav__dot" aria-label="Testimonial 4" data-index="3"></button>
+        <button class="testimonials-nav__dot" aria-label="Testimonial 5" data-index="4"></button>
+        <button class="testimonials-nav__dot" aria-label="Testimonial 6" data-index="5"></button>
+      </nav>
+    </div>
+    
+  </div>
+</section>
+
+<section class="section section--alt">
+  <div class="section__container">
+    <header class="section__header">
+      <h2 class="section__title">Leave a Review</h2>
+      <p class="section__subtitle">Had a great experience? I'd love to hear from you!</p>
+    </header>
+    
+    <div class="services-grid" style="max-width: 600px; margin: 0 auto;">
+      <article class="service-card text-center">
+        <h3 class="service-card__title">Google Review</h3>
+        <p class="service-card__text">Leave a review on Google to help others find great service.</p>
+        <a href="#" class="btn btn--primary mt-lg">Leave Google Review</a>
+        <p style="font-size: 0.875rem; color: #666; margin-top: 1rem;"><em>Link coming soon</em></p>
+      </article>
+    </div>
+    
+  </div>
+</section>
+
+<section class="section">
+  <div class="section__container">
+    <header class="section__header">
+      <h2 class="section__title">Ready to Experience 5-Star Service?</h2>
+      <p class="section__subtitle">Book your ride today</p>
+    </header>
+    
+    <div class="hero__cta">
+      <a href="tel:{{ site.phone_e164 }}" class="btn btn--call btn--large">
+        Call Now
+      </a>
+      <a href="https://wa.me/{{ site.whatsapp_number }}" class="btn btn--whatsapp btn--large" target="_blank" rel="noopener">
+        WhatsApp
+      </a>
+      <a href="/book/" class="btn btn--primary btn--large">Book Online</a>
+    </div>
+  </div>
+</section>

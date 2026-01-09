@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
+  <title>{{ title }} | {{ site.business_name }}</title>
+  <meta name="description" content="{{ description | default(site.business_name ~ ' - Reliable taxi service in ' ~ site.city_region) }}">
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="{{ title }} | {{ site.business_name }}">
+  <meta property="og:description" content="{{ description | default(site.business_name ~ ' - Reliable taxi service in ' ~ site.city_region) }}">
+  <meta property="og:image" content="{{ site.base_url }}/assets/images/{{ seo_image | default('og-image.webp') }}">
+  <meta property="og:url" content="{{ site.base_url }}{{ page.url }}">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_AU">
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{{ title }} | {{ site.business_name }}">
+  <meta name="twitter:description" content="{{ description | default(site.business_name ~ ' - Reliable taxi service in ' ~ site.city_region) }}">
+  <meta name="twitter:image" content="{{ site.base_url }}/assets/images/{{ seo_image | default('og-image.webp') }}">
+  
+  <!-- Canonical -->
+  <link rel="canonical" href="{{ site.base_url }}{{ page.url }}">
+  
+  <!-- Favicon -->
+  <link rel="icon" href="/assets/images/favicon.ico" sizes="32x32">
+  <link rel="icon" href="/assets/images/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/assets/images/apple-touch-icon.png">
+  
+  <!-- Preconnect for performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  
+  <!-- Font - System stack with optional Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Styles -->
+  <link rel="stylesheet" href="/assets/css/styles.css">
+  
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "@id": "{{ site.base_url }}/#business",
+    "name": "{{ site.business_name }}",
+    "description": "Professional taxi and transportation service in {{ site.city_region }}",
+    "url": "{{ site.base_url }}",
+    "telephone": "{{ site.phone_e164 }}",
+    "email": "{{ site.email_contact }}",
+    "image": "{{ site.base_url }}/assets/images/og-image.webp",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "{{ site.city_region }}",
+      "addressCountry": "AU"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": "{{ site.map_lat }}",
+      "longitude": "{{ site.map_lon }}"
+    },
+    "areaServed": {
+      "@type": "GeoCircle",
+      "geoMidpoint": {
+        "@type": "GeoCoordinates",
+        "latitude": "{{ site.map_lat }}",
+        "longitude": "{{ site.map_lon }}"
+      },
+      "geoRadius": "50000"
+    },
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        "opens": "06:00",
+        "closes": "22:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Saturday", "Sunday"],
+        "opens": "07:00",
+        "closes": "23:00"
+      }
+    ],
+    "priceRange": "$$",
+    "currenciesAccepted": "AUD",
+    "paymentAccepted": "Cash, Credit Card, EFTPOS",
+    "sameAs": [
+      {% if site.facebook_url %}"{{ site.facebook_url }}"{% endif %}
+      {% if site.instagram_url %}{% if site.facebook_url %},{% endif %}"{{ site.instagram_url }}"{% endif %}
+    ]
+  }
+  </script>
+  
+  {% if site.ga4_id %}
+  <!-- Google Analytics (optional) -->
+  <!-- Uncomment the following to enable GA4 tracking
+  <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.ga4_id }}"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', '{{ site.ga4_id }}');
+  </script>
+  -->
+  {% endif %}
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  
+  {% include "header.njk" %}
+  
+  <main id="main-content" class="main">
+    {{ content | safe }}
+  </main>
+  
+  {% include "footer.njk" %}
+  
+  <script src="/assets/js/main.js" defer></script>
+</body>
+</html>

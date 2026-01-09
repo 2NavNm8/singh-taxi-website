@@ -1,0 +1,140 @@
+---
+layout: base.njk
+title: Fares
+description: Transparent taxi fares with no hidden costs. Get a quote for airport transfers and local trips in {CITY_REGION}.
+seo_image: og-image.webp
+---
+
+<div class="page-header">
+  <h1 class="page-header__title">Fares & Pricing</h1>
+  <p class="page-header__subtitle">Transparent pricing with no hidden costs</p>
+</div>
+
+<section class="section">
+  <div class="section__container">
+    <div class="content" style="max-width: 900px;">
+
+## Standard Fares
+
+All fares are estimates. Actual fare may vary based on traffic conditions and route taken.
+
+<table class="fares-table">
+  <thead>
+    <tr>
+      <th>Service</th>
+      <th>Starting From</th>
+      <th>Notes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Flag Fall</td>
+      <td>$X.XX</td>
+      <td>Initial charge</td>
+    </tr>
+    <tr>
+      <td>Per Kilometre</td>
+      <td>$X.XX/km</td>
+      <td>Standard rate</td>
+    </tr>
+    <tr>
+      <td>Waiting Time</td>
+      <td>$X.XX/min</td>
+      <td>When stationary</td>
+    </tr>
+    <tr>
+      <td>Booking Fee</td>
+      <td>$X.XX</td>
+      <td>Pre-booked trips</td>
+    </tr>
+  </tbody>
+</table>
+
+## Airport Transfer Prices
+
+Fixed prices for airport transfers – no meter, no surprises.
+
+<table class="fares-table">
+  <thead>
+    <tr>
+      <th>Route</th>
+      <th>Price</th>
+      <th>Travel Time</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>{{ site.city_region }} CBD to Airport</td>
+      <td>$XX</td>
+      <td>~30 mins</td>
+    </tr>
+    <tr>
+      <td>[Suburb 1] to Airport</td>
+      <td>$XX</td>
+      <td>~25 mins</td>
+    </tr>
+    <tr>
+      <td>[Suburb 2] to Airport</td>
+      <td>$XX</td>
+      <td>~40 mins</td>
+    </tr>
+    <tr>
+      <td>[Suburb 3] to Airport</td>
+      <td>$XX</td>
+      <td>~35 mins</td>
+    </tr>
+  </tbody>
+</table>
+
+<p class="mt-lg"><em>Don't see your suburb? Contact me for a quote.</em></p>
+
+## Payment Methods
+
+I accept the following payment methods:
+
+- **Cash** – Australian dollars
+- **Card** – Visa, Mastercard, EFTPOS
+- **Digital** – Apple Pay, Google Pay
+
+## Surcharges
+
+<table class="fares-table">
+  <thead>
+    <tr>
+      <th>Time/Day</th>
+      <th>Surcharge</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Weekdays 6am – 10pm</td>
+      <td>No surcharge</td>
+    </tr>
+    <tr>
+      <td>Nights 10pm – 6am</td>
+      <td>20%</td>
+    </tr>
+    <tr>
+      <td>Weekends & Public Holidays</td>
+      <td>10%</td>
+    </tr>
+  </tbody>
+</table>
+
+## Get a Quote
+
+Not sure how much your trip will cost? Get in touch for a free, no-obligation quote.
+
+</div>
+
+<div class="hero__cta mt-xl">
+  <a href="tel:{{ site.phone_e164 }}" class="btn btn--call btn--large">
+    Call for Quote
+  </a>
+  <a href="https://wa.me/{{ site.whatsapp_number }}?text=Hi%2C%20I'd%20like%20a%20quote%20for%20a%20taxi%20trip." class="btn btn--whatsapp btn--large" target="_blank" rel="noopener">
+    WhatsApp Quote
+  </a>
+</div>
+
+  </div>
+</section>
