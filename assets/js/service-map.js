@@ -6,6 +6,10 @@
 (function() {
   'use strict';
 
+  // Store map instance and area config globally for external access
+  let mapInstance = null;
+  let areaConfigInstance = null;
+
   document.addEventListener('DOMContentLoaded', initServiceMap);
 
   function initServiceMap() {
@@ -20,6 +24,9 @@
       zoomControl: true,
       attributionControl: true
     });
+
+    // Store map instance for external access
+    mapInstance = map;
 
     // Use a clean, professional map style (Stadia Alidade Smooth)
     L.tileLayer('https://tiles.stadiamaps.com/tiles/alidade_smooth/{z}/{x}/{y}{r}.png', {
@@ -58,6 +65,9 @@
         coords: [-37.0200, 144.5400]
       }
     };
+
+    // Store area config for external access
+    areaConfigInstance = areaConfig;
 
     // Create smooth circular coverage areas using circles
     // This looks more professional than irregular polygons
@@ -187,5 +197,80 @@
     // Enable scroll zoom only when map is clicked
     map.on('click', () => map.scrollWheelZoom.enable());
     mapContainer.addEventListener('mouseleave', () => map.scrollWheelZoom.disable());
+
+    // Handle clickable location items in the areas list
+    const locationItems = document.querySelectorAll('[data-location]');
+    locationItems.forEach(item => {
+      const locationKey = item.getAttribute('data-location');
+      
+      const handleLocationClick = () => {
+        if (areaConfig[locationKey]) {
+          const config = areaConfig[locationKey];
+          // Zoom to the location with animation
+          map.flyTo(config.coords, 13, {
+            duration: 1,
+            easeLinearity: 0.5
+          });
+          
+          // Highlight the corresponding coverage area
+          const areas = [kynetonCoverage, heathcoteCoverage, miaMiaCoverage, redesdaleCoverage];
+          const areaKeys = ['kyneton', 'heathcote', 'miaMia', 'redesdale'];
+          const areaIndex = areaKeys.indexOf(locationKey);
+          
+          areas.forEach((area, i) => {
+            if (i === areaIndex) {
+              area.setStyle({ fillOpacity: 0.5, weight: 3 });
+            } else {
+              area.setStyle({ fillOpacity: 0.1, weight: 1 });
+            }
+          });
+          
+          // Reset highlight after 2 seconds
+          setTimeout(() => {
+            areas.forEach(area => {
+              area.setStyle({ fillOpacity: 0.25, weight: 2 });
+            });
+          }, 2000);
+          
+          // Scroll the map into view if needed
+          mapContainer.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+      };
+      
+      // Handle click
+      item.addEventListener('click', handleLocationClick);
+      
+      // Handle keyboard accessibility (Enter and Space)
+      item.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          handleLocationClick();
+        }
+      });
+    });
+
+    // Expose a global function to zoom to a location
+    window.zoomToServiceArea = function(locationKey) {
+      if (mapInstance && areaConfigInstance && areaConfigInstance[locationKey]) {
+        const config = areaConfigInstance[locationKey];
+        mapInstance.flyTo(config.coords, 13, {
+          duration: 1,
+          easeLinearity: 0.5
+        });
+      }
+    };
+
+    // Expose function to reset map view
+    window.resetServiceMapView = function() {
+      if (mapInstance) {
+        const bounds = L.latLngBounds([
+          areaConfigInstance.kyneton.coords,
+          areaConfigInstance.heathcote.coords,
+          areaConfigInstance.miaMia.coords,
+          areaConfigInstance.redesdale.coords
+        ]);
+        mapInstance.flyToBounds(bounds, { padding: [50, 50], duration: 1 });
+      }
+    };
   }
 })();

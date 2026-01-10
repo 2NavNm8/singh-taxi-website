@@ -663,6 +663,33 @@ button {
   box-shadow: var(--shadow-lg), 0 0 20px var(--color-accent-glow);
 }
 
+/* Clickable location items */
+.areas-list__item--clickable {
+  cursor: pointer;
+  user-select: none;
+}
+
+.areas-list__item--clickable:focus {
+  outline: 3px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+.areas-list__item--clickable:active {
+  transform: translateY(-1px) scale(0.98);
+}
+
+.areas-list__item--clickable::after {
+  content: '🔍';
+  margin-left: var(--spacing-sm);
+  font-size: 0.8em;
+  opacity: 0;
+  transition: opacity var(--transition);
+}
+
+.areas-list__item--clickable:hover::after {
+  opacity: 1;
+}
+
 /* ========================================
    About Section - Personal & Trustworthy
    ======================================== */
